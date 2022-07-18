@@ -84,7 +84,7 @@ def main():
         os.makedirs(os.path.join(result_path, 'out'))
 
     for i, p in enumerate(img_paths):
-        img_num = re.search(r'^.+\/(\d+).png', p).group(1)
+        img_num = re.search(r'^.+\/(.+).png', p).group(1)
         result_image_path = os.path.join(result_path, img_num)
         if not os.path.exists(result_image_path):
             os.makedirs(result_image_path)
