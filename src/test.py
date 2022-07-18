@@ -55,14 +55,11 @@ def main():
     netH.eval()
 
     print('----testing----')
-    H_name = re.search(r'^.+\/(.+).ckpt', opts.load_H_name).group(1)
-    F_name = re.search(r'^.+\/(.+).ckpt', opts.load_F_name).group(1)
-    
+
     S_gens = []
     I_gens = []
     H_outs = []
     I_outs = []
-    # start_time = time.time()
     for path in img_paths:
         S = to_var(load_image(path)) if opts.gpu else load_image(path)
         for i in range(opts.times):
@@ -79,17 +76,14 @@ def main():
             I_gens += [to_data(I_gen) if opts.gpu else I_gen]
             H_outs += [to_data(H_out) if opts.gpu else H_out]            
             I_outs += [to_data(I_out) if opts.gpu else I_out]
-            # t = time.time() - start_time
-            # print('time: ' + str(t))
 
     print('----save----')
-    result_path = os.path.join(opts.result_dir, opts.model_name, H_name, F_name)
+    result_path = os.path.join(opts.result_dir, opts.model_name)
     if not os.path.exists(result_path):
         os.makedirs(result_path)
     if not os.path.exists(os.path.join(result_path, 'out')):
         os.makedirs(os.path.join(result_path, 'out'))
-    # if not os.path.exists(os.path.join(result_path, 'sgen')):
-    #     os.makedirs(os.path.join(result_path, 'sgen'))
+
     for i, p in enumerate(img_paths):
         img_num = re.search(r'^.+\/(\d+).png', p).group(1)
         result_image_path = os.path.join(result_path, img_num)
@@ -97,7 +91,7 @@ def main():
             os.makedirs(result_image_path)
             
         save_image(load_image(p)[0], result_image_path+'/input.png')
-        # i = int(img_num)-1
+
         for j in range(opts.times):     
             save_image(S_gens[i*opts.times+j][0], os.path.join(result_image_path, 'SGEN_'+str(j)+'.png'))
             save_image(I_gens[i*opts.times+j][0], os.path.join(result_image_path, 'IGEN_'+str(j)+'.png'))
@@ -105,7 +99,6 @@ def main():
             save_image(I_outs[i*opts.times+j][0], os.path.join(result_image_path, 'IOUT_'+str(j)+'.png'))
             if j == 0:
                 save_image(I_outs[i*opts.times+j][0], os.path.join(result_path, 'out', 'IOUT_'+str(i)+'_'+str(j)+'.png'))
-                # save_image(S_gens[i*opts.times+j][0], os.path.join(result_path, 'sgen', 'SGEN_'+str(i)+'_'+str(j)+'.png'))
 
 if __name__ == '__main__':
     main()

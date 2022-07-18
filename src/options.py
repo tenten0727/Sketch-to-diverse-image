@@ -5,9 +5,9 @@ class TestOptions():
         self.parser = argparse.ArgumentParser()
 
         # data loader related
-        self.parser.add_argument('--input_name', type=str, default='../data/face_sketch', help='path of the style image')
-        self.parser.add_argument('--style_H_name', type=str, default='../data/SYN/5.png', help='path of the style image')
-        self.parser.add_argument('--style_F_name', type=str, default='../data/SYN/5.png', help='path of the style image')
+        self.parser.add_argument('--input_name', type=str, default='../data/face_sketch', help='path of the input image')
+        self.parser.add_argument('--style_H_name', type=str, default='', help='path of the reference image of the structure')
+        self.parser.add_argument('--style_F_name', type=str, default='', help='path of the reference image of the appearance')
         self.parser.add_argument('--model_task', type=str, default='SYN', help='SYN for image synthesis, EDT for image editing')
 
         # ouptput related
@@ -15,13 +15,13 @@ class TestOptions():
         self.parser.add_argument('--result_dir', type=str, default='../result/', help='path for saving result images')
         self.parser.add_argument('--l', type=float, default=-1, help='refinement level,  0~1 for single level, -1 for multiple level in 0~1 with step of scale_step')
         self.parser.add_argument('--l_step', type=float, default=0.25, help='level step')
-        self.parser.add_argument('--times', type=int, default=10, help='how many times')
+        self.parser.add_argument('--times', type=int, default=3, help='how many times')
 
         # model related
         self.parser.add_argument('--model_path', type=str, default='../pretrained_model/', help='specify the model path to load')
-        self.parser.add_argument('--model_name', type=str, default='ECCV-SYN-celebaHQ', help='specify the model name to load')
-        self.parser.add_argument('--load_F_name', type=str, default='../pretrained_model/F256.ckpt', help='specified the dir of saved network F')
-        self.parser.add_argument('--load_H_name', type=str, default='../pretrained_model/H256.ckpt', help='specified the dir of saved network H')
+        self.parser.add_argument('--model_name', type=str, default='celebaHQ', help='specify the model name to load')
+        self.parser.add_argument('--load_F_name', type=str, default='../pretrained_model/celebaHQ-F256.ckpt', help='specified the dir of saved network F')
+        self.parser.add_argument('--load_H_name', type=str, default='../pretrained_model/celebaHQ-H256.ckpt', help='specified the dir of saved network H')
         self.parser.add_argument('--gpu', type=int, default=1, help='gpu, 0 for cpu, 1 for gpu')
         self.parser.add_argument('--max_dilate', type=int, default=21, help='max dilation diameter')
         self.parser.add_argument('--z_dim', type=int, default=8, help='dimension of z')
