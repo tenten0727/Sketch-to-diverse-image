@@ -16,7 +16,27 @@ pip install -r requirements.txt
 2. Run test.py
 ```
 cd src
-python test.py --input_name ../data/face_sketch/
+python test.py --input_name path/to/face_sketch
+```
+
+## Training
+### Training the detail network H
+```
+cd src
+python train.py \
+--train_path path/to/DFE_edge_map \
+--edge_path path/to/HED_edge_map \
+--edgeSmooth \
+--save_model_name network-H
+```
+### Training the appearance network F
+```
+cd src
+python train.py \
+--train_path path/to/color_image \
+--edge_path path/to/DFE_edge_map \
+--weight_feat 0.0 \
+--save_model_name network-F
 ```
 
 ## Citation
