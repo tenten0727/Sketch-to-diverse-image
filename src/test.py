@@ -3,12 +3,11 @@ from __future__ import print_function
 import torch
 from options import TestOptions
 from models import PSGAN
-from utils import to_var, to_data, visualize, load_image, save_image
+from utils import to_var, to_data, load_image, save_image
 from pix2pix import Pix2pix256
 import numpy as np
 import re
 import glob
-import time
 
 import os
 

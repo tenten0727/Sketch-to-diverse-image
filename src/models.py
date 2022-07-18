@@ -1,19 +1,15 @@
 from __future__ import print_function
 import numpy as np
-import random
-import cv2
-import math
 import os
 
 import torch
 import torch.nn as nn
-from torch.nn import Linear, Conv2d, BatchNorm2d, LeakyReLU, ConvTranspose2d, ReLU, Tanh, InstanceNorm2d
+from torch.nn import Linear, Conv2d, LeakyReLU, ConvTranspose2d, ReLU, Tanh
 import torch.nn.functional as F
-from torch.autograd import Variable
-from torch.nn import ReflectionPad2d, ReplicationPad2d
+from torch.nn import ReflectionPad2d
 from torch.nn.utils import spectral_norm
 
-from utils import to_var, to_data, weights_init, visualize, load_image, save_image, binarize
+from utils import binarize
 from roughSketchSyn import ConditionalDilate, MyDilateBlur, random_discard, RandomDeform
 
 id = 0 # for saving network output to file during training

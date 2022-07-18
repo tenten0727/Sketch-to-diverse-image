@@ -1,15 +1,11 @@
 from __future__ import print_function
 import numpy as np
-import random
-import cv2
-import math
 
 import torch
 import torch.nn as nn
-from torch.nn import Linear, Conv2d, BatchNorm2d, LeakyReLU, ConvTranspose2d, ReLU, Tanh, InstanceNorm2d, Softmax
+from torch.nn import  Conv2d, BatchNorm2d, LeakyReLU, ConvTranspose2d, ReLU, Tanh, InstanceNorm2d, Softmax
 import torch.nn.functional as F
-from torch.autograd import Variable
-from torch.nn import ReflectionPad2d, ReplicationPad2d
+from torch.nn import ReflectionPad2d
 from torch.nn.utils import spectral_norm
 from models import ConvEncoder, AdaptiveInstanceNorm
 

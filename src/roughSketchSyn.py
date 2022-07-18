@@ -1,19 +1,10 @@
 import torch
 
-from PIL import Image
-import matplotlib.pyplot as plt
-import torchvision.transforms as transforms
 import torch.nn as nn
-from torch.autograd import Variable
 import numpy as np
-import cv2
-import scipy.ndimage as pyimg
-import os
-import random
 import math
 import torch.nn.functional as F
 
-from torch.utils import data
 from torchvision import transforms as T
 
 # discard partial lines by removing random patches from the full sketches

@@ -2,19 +2,13 @@ import torch
 
 from PIL import Image
 import matplotlib.pyplot as plt
-import torchvision.transforms as transforms
 from torch.autograd import Variable
 import numpy as np
 import cv2
-import scipy.ndimage as pyimg
-import os
-import random
-import cv2
-import math
 import glob
 
-from torch.utils import data
 from torchvision import transforms as T
+import torchvision.transforms as transforms
 
 def to_var(x):
     """Convert tensor to variable."""
