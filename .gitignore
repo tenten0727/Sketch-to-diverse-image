@@ -131,3 +131,4 @@ dmypy.json
 data/
 pretrained_model/
 result/
+save/
