@@ -23,7 +23,7 @@ python test.py
 ```
 
 ## Training
-Download dataset from [Google Drive](https://drive.google.com/drive/folders/1NSuh0L5RTFQq0lwZq0NRAiloX_ar-kWa?usp=sharing) to the "data" directory.
+Download the dataset from [Google Drive](https://drive.google.com/drive/folders/1NSuh0L5RTFQq0lwZq0NRAiloX_ar-kWa?usp=sharing) to the "data" directory.
 
 ### Training the detail network H
 ```
