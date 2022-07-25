@@ -14,20 +14,23 @@ pip install -r requirements.txt
 ```
 
 ## Inference with our pre-trained models
-1. Download our [pre-trained models]() for CelebA-HQ dataset and put them in the "pretrained_model" directory in the parent directory.
-2. Run test.py
+1. Download our [pre-trained models](https://drive.google.com/file/d/1OMMnm5Ez5rq1YYbbLWTelpL4EKwhzjy0/view?usp=sharing) for CelebA-HQ dataset and put them in the "pretrained_model" directory in the parent directory.
+2. Download "Human-Drawn Facial sketches" in [DeepPS](https://github.com/VITA-Group/DeepPS) and put "sketches" directory in them in the "data" directory in the parent directory.
+3. Run test.py
 ```
 cd src
-python test.py --input_name path/to/face_sketch
+python test.py
 ```
 
 ## Training
+Download dataset from [Google Drive](https://drive.google.com/drive/folders/1NSuh0L5RTFQq0lwZq0NRAiloX_ar-kWa?usp=sharing) to the "data" directory.
+
 ### Training the detail network H
 ```
 cd src
 python train.py \
---train_path path/to/DFE_edge_map \
---edge_path path/to/HED_edge_map \
+--train_path ../data/CelebA-HQ256_DFE \
+--edge_path ../data/CelebA-HQ256_HED \
 --edgeSmooth \
 --save_model_name network-H
 ```
@@ -35,8 +38,8 @@ python train.py \
 ```
 cd src
 python train.py \
---train_path path/to/color_image \
---edge_path path/to/DFE_edge_map \
+--train_path ../data/CelebA-HQ256 \
+--edge_path ../data/CelebA-HQ256_DFE \
 --weight_feat 0.0 \
 --save_model_name network-F
 ```
