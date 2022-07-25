@@ -5,7 +5,7 @@ class TestOptions():
         self.parser = argparse.ArgumentParser()
 
         # data loader related
-        self.parser.add_argument('--input_name', type=str, default='../data/face_sketch', help='path of the input image')
+        self.parser.add_argument('--input_name', type=str, default='../data/sketches', help='path of the input image')
         self.parser.add_argument('--style_H_name', type=str, default='', help='path of the reference image of the structure')
         self.parser.add_argument('--style_F_name', type=str, default='', help='path of the reference image of the appearance')
         self.parser.add_argument('--model_task', type=str, default='SYN', help='SYN for image synthesis, EDT for image editing')
