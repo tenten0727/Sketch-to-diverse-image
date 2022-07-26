@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ## Inference with our pre-trained models
 1. Download our [pre-trained models](https://drive.google.com/file/d/1OMMnm5Ez5rq1YYbbLWTelpL4EKwhzjy0/view?usp=sharing) for the CelebA-HQ dataset and put them into the "pretrained_model" directory in the parent directory.
-2. Download "Human-Drawn Facial sketches" in [DeepPS](https://github.com/VITA-Group/DeepPS) and put the "sketches" directory in them into the "data" directory in the parent directory.
+2. Download the zip file from "Human-Drawn Facial sketches" in [DeepPS](https://github.com/VITA-Group/DeepPS), unzip it, and put the "sketches" directory into the "data" directory in the parent directory.
 3. Run test.py
 ```
 cd src
