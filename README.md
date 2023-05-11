@@ -54,9 +54,9 @@ Please cite our paper if you find the code useful:
     author    = {Takato Yoshikawa and Yuki Endo and Yoshihiro Kanamori},
     title     = {Diversifying Detail and Appearance in Sketch-Based Face Image Synthesis},
     journal   = {The Visual Computer (Proc. of Computer Graphics Internatinal 2022)},
-    volume    = {},
-    number    = {},
-    pages     = {},
+    volume    = {38},
+    number    = {9},
+    pages     = {3121-–3133},
     year      = {2022}
 }
 ```
